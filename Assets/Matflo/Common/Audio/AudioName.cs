@@ -13,5 +13,13 @@
         MatflowIntro1=6,
         MatflowIntro2 = 7,
         MatflowIntro3 = 8,
+
+        OIScreen = 9,
+        PickingLocation = 10,
+        ScanTM = 11,
+        ScanSKU = 12,
+        PutawayLocation = 13,
+        ScanLocation = 14,
+        PutTM = 15,
     }
 }
