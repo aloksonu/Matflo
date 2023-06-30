@@ -17,10 +17,10 @@ public class PutawayNarrator : MonoSingleton<PutawayNarrator>
     internal string NPutTM;
 
     public Sprite spriteOIScreen;
-    public Sprite spritePickingLOcation;
+    public Sprite spritePickingLocation;
     public Sprite spriteScanTM;
     public Sprite spriteScanSKU;
-    public Sprite spritePutawayLOcation;
+    public Sprite spritePutawayLocation;
     public Sprite spriteScanLocation;
     public Sprite spritePutTM;
 

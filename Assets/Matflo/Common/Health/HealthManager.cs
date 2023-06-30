@@ -11,7 +11,7 @@ public class HealthManager : MonoSingleton<HealthManager>
     private int leftHealth;
     void Start()
     {
-        maxHealth = 2;
+        maxHealth = 20;
         ResetHealth();
     }
     internal void BringIn()

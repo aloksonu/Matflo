@@ -54,11 +54,11 @@ public class DragAndDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,I
       }
     public void UpdateHealth()
     {
-        //HealthManager.Instance.UpdateHealth(1);
-        //if (HealthManager.Instance.GetHealth() <= 0)
-        //{
-        //    LevelFail.Instance.BringIn();
-        //}
+        HealthManager.Instance.UpdateHealth(1);
+        if (HealthManager.Instance.GetHealth() <= 0)
+        {
+            LevelFail.Instance.BringIn();
+        }
     }
     public void UpdateIsDrop() {
         isDrop = true;
@@ -66,11 +66,17 @@ public class DragAndDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,I
         if(id==1)
             PutawayNarrator.Instance.BringInNarrator(PutawayNarrator.Instance.NOIScreen, AudioName.OIScreen, PutawayNarrator.Instance.spriteOIScreen, () => PutawayGameManager.Instance.UpdateDragedCounter());
         else if (id == 2)
-            PutawayNarrator.Instance.BringInNarrator(PutawayNarrator.Instance.NPickingLocation, AudioName.PickingLocation, PutawayNarrator.Instance.spritePickingLOcation, () => PutawayGameManager.Instance.UpdateDragedCounter());
+            PutawayNarrator.Instance.BringInNarrator(PutawayNarrator.Instance.NPickingLocation, AudioName.PickingLocation, PutawayNarrator.Instance.spritePickingLocation, () => PutawayGameManager.Instance.UpdateDragedCounter());
         else if (id == 3)
             PutawayNarrator.Instance.BringInNarrator(PutawayNarrator.Instance.NScanTM, AudioName.ScanTM, PutawayNarrator.Instance.spriteScanTM, () => PutawayGameManager.Instance.UpdateDragedCounter());
         else if (id == 4)
             PutawayNarrator.Instance.BringInNarrator(PutawayNarrator.Instance.NScanSKU, AudioName.ScanSKU, PutawayNarrator.Instance.spriteScanSKU, () => PutawayGameManager.Instance.UpdateDragedCounter());
+        else if (id == 5)
+            PutawayNarrator.Instance.BringInNarrator(PutawayNarrator.Instance.NPutawayLocation, AudioName.PutawayLocation, PutawayNarrator.Instance.spritePutawayLocation, () => PutawayGameManager.Instance.UpdateDragedCounter());
+        else if (id == 6)
+            PutawayNarrator.Instance.BringInNarrator(PutawayNarrator.Instance.NScanLocation, AudioName.ScanLocation, PutawayNarrator.Instance.spriteScanLocation, () => PutawayGameManager.Instance.UpdateDragedCounter());
+        else if (id == 7)
+            PutawayNarrator.Instance.BringInNarrator(PutawayNarrator.Instance.NPutTM, AudioName.PutTM, PutawayNarrator.Instance.spritePutTM, () => PutawayGameManager.Instance.UpdateDragedCounter());
     }
 
     public void UpdateScore()
