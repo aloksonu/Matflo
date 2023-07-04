@@ -8,6 +8,7 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
 {
     [SerializeField] GameObject[] dragObjects;
     [SerializeField] private Animator animator;
+    [SerializeField] PutawayPrerequisites putawayPrerequisites;
     private static readonly int AnimIdle = Animator.StringToHash("Idle");
     private static readonly int AnimPutaway = Animator.StringToHash("Putaway");
     private List<Vector3> listPos = new List<Vector3>();
@@ -27,6 +28,8 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
             dragObjects[i].transform.position = listPos[i];
         }
 
+        StartPutawayPrerequisites();
+
     }
     internal void ResetGame()
     {
@@ -38,14 +41,31 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
         dragCounter = 0;
     }
 
+    private void StartPutawayPrerequisites()
+    {
+        animator.transform.gameObject.SetActive(false);
+        putawayPrerequisites.BringIn(ShowAnimCharacter);
+    }
+
+    private void ShowAnimCharacter()
+    {
+        animator.transform.gameObject.SetActive(true);
+    }
+
+
     internal void UpdateDragedCounter()
     {
         dragCounter++;
+        Debug.Log("dragCounter= " + dragCounter);
+        Debug.Log("dragObjects.Length= " + dragObjects.Length);
         if (dragCounter >= dragObjects.Length)
         {
-            //LevelComplete.Instance.BringIn(0f);
             StartCoroutine(OnClickPutawayButtonE());
         }
+        //if (dragCounter >= 1)
+        //{
+        //    StartCoroutine(OnClickPutawayButtonE());
+        //}
     }
     internal int GetDragedCounter()
     {
@@ -61,7 +81,7 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
     {
         yield return new WaitForSeconds(0.2f);
         animator.SetTrigger(AnimPutaway);
-        yield return new WaitForSeconds(animator.GetAnimatorClipLength(AnimPutaway) + 0.2f);
+        yield return new WaitForSeconds(animator.GetAnimatorClipLength(AnimPutaway) + 1f);
         LevelComplete.Instance.BringIn(0f);
     }
 }
