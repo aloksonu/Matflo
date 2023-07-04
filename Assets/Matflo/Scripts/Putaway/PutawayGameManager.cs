@@ -7,6 +7,7 @@ using Utilities;
 public class PutawayGameManager : MonoSingleton<PutawayGameManager>
 {
     [SerializeField] GameObject[] dragObjects;
+    [SerializeField] GameObject[] dropObjects;
     [SerializeField] private Animator animator;
     [SerializeField] PutawayPrerequisites putawayPrerequisites;
     private static readonly int AnimIdle = Animator.StringToHash("Idle");
@@ -29,6 +30,7 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
         }
 
         StartPutawayPrerequisites();
+        ShowDropObjects();
 
     }
     internal void ResetGame()
@@ -56,6 +58,7 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
     internal void UpdateDragedCounter()
     {
         dragCounter++;
+        ShowDropObjects();
         Debug.Log("dragCounter= " + dragCounter);
         Debug.Log("dragObjects.Length= " + dragObjects.Length);
         if (dragCounter >= dragObjects.Length)
@@ -76,6 +79,15 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
     //{
     //    StartCoroutine(OnClickPutawayButtonE());
     //}
+
+    internal void ShowDropObjects()
+    {
+        foreach(GameObject g in dropObjects)
+        {
+            g.SetActive(false);
+        }
+        dropObjects[dragCounter].SetActive(true);
+    }
 
     private IEnumerator OnClickPutawayButtonE()
     {
