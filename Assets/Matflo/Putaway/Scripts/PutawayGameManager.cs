@@ -58,14 +58,15 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
     internal void UpdateDragedCounter()
     {
         dragCounter++;
-        ShowDropObjects();
-        Debug.Log("dragCounter= " + dragCounter);
+        if (dragCounter < 7)
+            ShowDropObjects();
         Debug.Log("dragObjects.Length= " + dragObjects.Length);
+        Debug.Log("dragCounter= " + dragCounter);
         if (dragCounter >= dragObjects.Length)
         {
             StartCoroutine(OnClickPutawayButtonE());
         }
-        //if (dragCounter >= 1)
+        //if (dragCounter >= 7)
         //{
         //    StartCoroutine(OnClickPutawayButtonE());
         //}
