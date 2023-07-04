@@ -10,6 +10,7 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
     [SerializeField] GameObject[] dropObjects;
     [SerializeField] private Animator animator;
     [SerializeField] PutawayPrerequisites putawayPrerequisites;
+    [SerializeField] private CanvasGroup _cgPutawayTutorial;
     private static readonly int AnimIdle = Animator.StringToHash("Idle");
     private static readonly int AnimPutaway = Animator.StringToHash("Putaway");
     private List<Vector3> listPos = new List<Vector3>();
@@ -66,6 +67,7 @@ public class PutawayGameManager : MonoSingleton<PutawayGameManager>
         {
             StartCoroutine(OnClickPutawayButtonE());
         }
+        _cgPutawayTutorial.UpdateState(false, 0.1f);
         //if (dragCounter >= 7)
         //{
         //    StartCoroutine(OnClickPutawayButtonE());
