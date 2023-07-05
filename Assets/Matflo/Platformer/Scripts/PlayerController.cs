@@ -4,8 +4,11 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject platformPrefab;
     public GameObject coinPrefab;
+    public GameObject[] stepsPrefab;
+    public GameObject obstacalPrefab;
     public GameObject parentPlatFormPrefab;
     public GameObject parentCoinPrefab;
+    public GameObject parentObstacalPrefab;
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     private bool isJumping = false;
@@ -16,6 +19,9 @@ public class PlayerController : MonoBehaviour
     private float PlatformSpawnPositionX;
     private int plateformCount;
 
+    private int stepsCounter;
+    internal int totalSteps;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,6 +29,8 @@ public class PlayerController : MonoBehaviour
         PlatformSpawnPositionX = 0f;
         PlatformPMultiplyer = platformPrefab.transform.localScale.x;
         plateformCount = 2;
+        stepsCounter = 1;
+        totalSteps = stepsPrefab.Length;
     }
 
     void Update()
@@ -45,7 +53,13 @@ public class PlayerController : MonoBehaviour
 
             float coinTransformPositionX = Random.Range(this.transform.position.x+4 , this.transform.position.x +9f);
             float coinTransformPositionY = Random.Range(-3.3f, 0f);
-            SpawnCoin(coinTransformPositionX, coinTransformPositionY);
+            //SpawnCoin(coinTransformPositionX, coinTransformPositionY);
+            StepsCoin(coinTransformPositionX, coinTransformPositionY);
+
+            //float obstacalTransformPositionX = Random.Range(this.transform.position.x + 4, this.transform.position.x + 9f);
+            //float obstacalTransformPositionY = Random.Range(-3.3f, 0f);
+            float obstacalTransformPositionX = Random.Range(coinTransformPositionX+5, coinTransformPositionX+8);
+            SpawnObstacal(obstacalTransformPositionX, -3.73f);
         }
     }
 
@@ -66,5 +80,16 @@ public class PlayerController : MonoBehaviour
     {
         GameObject g = Instantiate(coinPrefab, new Vector3(x, y, 0f), Quaternion.identity);
         g.transform.SetParent(parentCoinPrefab.transform);
+    }
+    void SpawnObstacal(float x, float y)
+    {
+        GameObject g = Instantiate(obstacalPrefab, new Vector3(x, y, 0f), Quaternion.identity);
+        g.transform.SetParent(parentObstacalPrefab.transform);
+    }
+    void StepsCoin(float x, float y)
+    {
+        GameObject g = Instantiate(stepsPrefab[stepsCounter], new Vector3(x, y, 0f), Quaternion.identity);
+        g.transform.SetParent(parentCoinPrefab.transform);
+        stepsCounter++;
     }
 }

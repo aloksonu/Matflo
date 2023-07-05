@@ -6,10 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public CanvasGroup cgGameWin;
-    public CanvasGroup cgGameLoose;
+    public CanvasGroup cgGameLose;
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI timeText;
     public float timeLimit = 60f;
+    public PlayerController playerController;
     private float timeLeft;
     private int collectedCoins = 0;
 
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
 
         if (timeLeft <= 0f)
         {
-            EndGame(cgGameLoose);
+            GameLose();
         }
     }
 
@@ -44,9 +45,9 @@ public class GameManager : MonoBehaviour
         collectedCoins++;
         UpdateCoinText();
 
-        if (collectedCoins >= 6)
+        if (collectedCoins >= playerController.totalSteps)
         {
-            EndGame(cgGameWin);
+            GameWin();
         }
     }
 
@@ -60,11 +61,17 @@ public class GameManager : MonoBehaviour
         timeText.text = "Time: " + Mathf.RoundToInt(timeLeft).ToString();
     }
 
-    private void EndGame(CanvasGroup cg)
+    internal void GameWin()
     {
-        // Display the end game message
-        cg.alpha = 1f;
-        cg.blocksRaycasts = true;
-        cg.interactable = true;
+        cgGameWin.alpha = 1f;
+        cgGameWin.blocksRaycasts = true;
+        cgGameWin.interactable = true;
+    }
+
+    internal void GameLose()
+    {
+        cgGameLose.alpha = 1f;
+        cgGameLose.blocksRaycasts = true;
+        cgGameLose.interactable = true;
     }
 }
