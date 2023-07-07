@@ -1,4 +1,4 @@
-﻿namespace Audio.Matflo
+﻿namespace Matflo.Common.Audio
 {
     public enum AudioName
     {

@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class Step : MonoBehaviour
+namespace Matflo.Platformer.Scripts
 {
-    public StepsName stepsName;
-    void Start()
+    public class Step : MonoBehaviour
     {
-        
-    }
-
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.CompareTag("Player"))
+        public StepsName stepsName;
+        void Start()
         {
-            GameManager.instance.CollectCoin();
-            Destroy(gameObject);
+        
+        }
+
+        void OnTriggerEnter2D(Collider2D collider)
+        {
+            if (collider.gameObject.CompareTag("Player"))
+            {
+                GameManager.instance.CollectCoin();
+                Destroy(gameObject);
+            }
         }
     }
 }

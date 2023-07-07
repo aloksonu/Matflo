@@ -1,77 +1,79 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+namespace Matflo.Platformer.Scripts
 {
-    public static GameManager instance;
-    public CanvasGroup cgGameWin;
-    public CanvasGroup cgGameLose;
-    public TextMeshProUGUI coinText;
-    public TextMeshProUGUI timeText;
-    public float timeLimit = 60f;
-    public PlayerController playerController;
-    private float timeLeft;
-    private int collectedCoins = 0;
-
-    void Awake()
+    public class GameManager : MonoBehaviour
     {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
-    }
+        public static GameManager instance;
+        public CanvasGroup cgGameWin;
+        public CanvasGroup cgGameLose;
+        public TextMeshProUGUI coinText;
+        public TextMeshProUGUI timeText;
+        public float timeLimit = 60f;
+        public PlayerController playerController;
+        private float timeLeft;
+        private int collectedCoins = 0;
 
-    void Start()
-    {
-        timeLeft = timeLimit;
-        UpdateCoinText();
-        UpdateTimeText();
-    }
-
-    void Update()
-    {
-        timeLeft -= Time.deltaTime;
-        UpdateTimeText();
-
-        if (timeLeft <= 0f)
+        void Awake()
         {
-            GameLose();
+            if (instance == null)
+                instance = this;
+            else if (instance != this)
+                Destroy(gameObject);
         }
-    }
 
-    public void CollectCoin()
-    {
-        collectedCoins++;
-        UpdateCoinText();
-
-        if (collectedCoins >= playerController.totalSteps)
+        void Start()
         {
-            GameWin();
+            timeLeft = timeLimit;
+            UpdateCoinText();
+            UpdateTimeText();
         }
-    }
 
-    private void UpdateCoinText()
-    {
-        coinText.text = "Coins: " + collectedCoins.ToString();
-    }
+        void Update()
+        {
+            timeLeft -= Time.deltaTime;
+            UpdateTimeText();
 
-    private void UpdateTimeText()
-    {
-        timeText.text = "Time: " + Mathf.RoundToInt(timeLeft).ToString();
-    }
+            if (timeLeft <= 0f)
+            {
+                GameLose();
+            }
+        }
 
-    internal void GameWin()
-    {
-        cgGameWin.alpha = 1f;
-        cgGameWin.blocksRaycasts = true;
-        cgGameWin.interactable = true;
-    }
+        public void CollectCoin()
+        {
+            collectedCoins++;
+            UpdateCoinText();
 
-    internal void GameLose()
-    {
-        cgGameLose.alpha = 1f;
-        cgGameLose.blocksRaycasts = true;
-        cgGameLose.interactable = true;
+            if (collectedCoins >= playerController.totalSteps)
+            {
+                GameWin();
+            }
+        }
+
+        private void UpdateCoinText()
+        {
+            coinText.text = "Coins: " + collectedCoins.ToString();
+        }
+
+        private void UpdateTimeText()
+        {
+            timeText.text = "Time: " + Mathf.RoundToInt(timeLeft).ToString();
+        }
+
+        internal void GameWin()
+        {
+            cgGameWin.alpha = 1f;
+            cgGameWin.blocksRaycasts = true;
+            cgGameWin.interactable = true;
+        }
+
+        internal void GameLose()
+        {
+            cgGameLose.alpha = 1f;
+            cgGameLose.blocksRaycasts = true;
+            cgGameLose.interactable = true;
+        }
     }
 }

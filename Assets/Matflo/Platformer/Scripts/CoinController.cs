@@ -1,13 +1,16 @@
 using UnityEngine;
 
-public class CoinController : MonoBehaviour
+namespace Matflo.Platformer.Scripts
 {
-    void OnTriggerEnter2D(Collider2D collider)
+    public class CoinController : MonoBehaviour
     {
-        if (collider.gameObject.CompareTag("Player"))
+        void OnTriggerEnter2D(Collider2D collider)
         {
-            GameManager.instance.CollectCoin();
-            Destroy(gameObject);
+            if (collider.gameObject.CompareTag("Player"))
+            {
+                GameManager.instance.CollectCoin();
+                Destroy(gameObject);
+            }
         }
     }
 }

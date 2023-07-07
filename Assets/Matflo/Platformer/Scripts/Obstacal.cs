@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacal : MonoBehaviour
+namespace Matflo.Platformer.Scripts
 {
-    public ObstacalsName ObstacalName;
-    void Start()
+    public class Obstacal : MonoBehaviour
     {
-        
-    }
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.CompareTag("Player"))
+        public ObstacalsName ObstacalName;
+        void Start()
         {
-            GameManager.instance.GameLose();
-            Destroy(collider.gameObject);
+        
+        }
+        void OnTriggerEnter2D(Collider2D collider)
+        {
+            if (collider.gameObject.CompareTag("Player"))
+            {
+                GameManager.instance.GameLose();
+                Destroy(collider.gameObject);
+            }
         }
     }
 }

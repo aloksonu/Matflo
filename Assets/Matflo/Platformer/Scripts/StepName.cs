@@ -1,9 +1,12 @@
-public enum StepsName
+namespace Matflo.Platformer.Scripts
 {
+    public enum StepsName
+    {
 
-    NotSet = -1,
-    StepName1 = 0,
-    StepName2 = 1,
-    StepName3 = 2,
-    StepName4 = 3,
+        NotSet = -1,
+        StepName1 = 0,
+        StepName2 = 1,
+        StepName3 = 2,
+        StepName4 = 3,
+    }
 }

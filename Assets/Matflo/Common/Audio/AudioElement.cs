@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Audio.Matflo
+namespace Matflo.Common.Audio
 {
     [System.Serializable]
     public class AudioElement

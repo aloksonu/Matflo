@@ -1,12 +1,9 @@
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Utilities;
 
-
-namespace GamePlay.Quiz
+namespace Matflo.Common.Quiz
 {
     public class QuizButton : MonoBehaviour ,IPointerEnterHandler,IPointerExitHandler
     {

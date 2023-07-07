@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseButton : MonoBehaviour
+namespace Matflo.Home.Scripts.Home
 {
-    [SerializeField] private Button btnPause;
-    void Start()
+    public class PauseButton : MonoBehaviour
     {
-        btnPause.onClick.AddListener(OnClickPauseButton);
-    }
-    internal void OnClickPauseButton()
-    {
-        PausePanel.Instance.OnClickPauseButton();
+        [SerializeField] private Button btnPause;
+        void Start()
+        {
+            btnPause.onClick.AddListener(OnClickPauseButton);
+        }
+        internal void OnClickPauseButton()
+        {
+            PausePanel.Instance.OnClickPauseButton();
+        }
     }
 }

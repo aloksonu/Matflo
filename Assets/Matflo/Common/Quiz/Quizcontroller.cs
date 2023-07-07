@@ -1,10 +1,10 @@
 using System;
-using Ui.ScoreSystem;
+using Matflo.Common.Score;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
 
-namespace GamePlay.Quiz
+namespace Matflo.Common.Quiz
 {
     public class Quizcontroller : MonoSingleton<Quizcontroller>
     {
