@@ -44,7 +44,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 6
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: ae0cd0f5c7481d742b2a7ab2cc16295f, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
@@ -54,7 +54,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 7
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: f61c6693e7b574c43acf905b33cc6881, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 8
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: 500c3ffcde8ce2745ab38a6527126807, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
