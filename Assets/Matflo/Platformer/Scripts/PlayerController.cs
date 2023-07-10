@@ -37,10 +37,19 @@ namespace Matflo.Platformer.Scripts
 
         void Update()
         {
+
+            if (!PlateformerNarrator.Instance.isNarratorOpen && !GameManager.instance.isGameWin)
+            {
+                moveSpeed = 5f;
+            }
+            else
+            {
+                moveSpeed = 0f;
+            }
             float moveX = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
 
-            if (Input.GetButtonDown("Jump") && !isJumping)
+            if (Input.GetButtonDown("Jump") && !isJumping && !PlateformerNarrator.Instance.isNarratorOpen && !GameManager.instance.isGameWin)
             {
                 rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 isJumping = true;

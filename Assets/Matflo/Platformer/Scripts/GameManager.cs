@@ -1,3 +1,4 @@
+using Matflo.Common.Audio;
 using TMPro;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ namespace Matflo.Platformer.Scripts
         public PlayerController playerController;
         private float timeLeft;
         private int collectedCoins = 0;
+        internal bool isGameWin;
+        internal bool isGameLose;
 
         void Awake()
         {
@@ -26,6 +29,8 @@ namespace Matflo.Platformer.Scripts
         void Start()
         {
             timeLeft = timeLimit;
+            isGameWin = false;
+            isGameLose = false;
             UpdateCoinText();
             UpdateTimeText();
         }
@@ -45,10 +50,30 @@ namespace Matflo.Platformer.Scripts
         {
             collectedCoins++;
             UpdateCoinText();
+            ShowNarrator();
+            //if (collectedCoins >= playerController.totalSteps)
+            //{
+            //    GameWin();
+            //}
+        }
 
-            if (collectedCoins >= playerController.totalSteps)
+        private void ShowNarrator()
+        {
+            if (collectedCoins == 1)
             {
-                GameWin();
+                PlateformerNarrator.Instance.BringInNarrator(PlateformerNarrator.Instance.None, AudioName.ButtonClick, PlateformerNarrator.Instance.spriteOne);
+            }
+            if (collectedCoins == 2)
+            {
+                PlateformerNarrator.Instance.BringInNarrator(PlateformerNarrator.Instance.Ntwo, AudioName.ButtonClick, PlateformerNarrator.Instance.spriteTwo);
+            }
+            if (collectedCoins == 3)
+            {
+                PlateformerNarrator.Instance.BringInNarrator(PlateformerNarrator.Instance.Nthree, AudioName.ButtonClick, PlateformerNarrator.Instance.spriteThree);
+            }
+            if (collectedCoins == 4)
+            {
+                PlateformerNarrator.Instance.BringInNarrator(PlateformerNarrator.Instance.Nfour, AudioName.ButtonClick, PlateformerNarrator.Instance.spriteFour,()=> {GameWin();});
             }
         }
 
@@ -64,6 +89,7 @@ namespace Matflo.Platformer.Scripts
 
         internal void GameWin()
         {
+            isGameWin = true;
             cgGameWin.alpha = 1f;
             cgGameWin.blocksRaycasts = true;
             cgGameWin.interactable = true;
@@ -71,6 +97,7 @@ namespace Matflo.Platformer.Scripts
 
         internal void GameLose()
         {
+            isGameLose = true;
             cgGameLose.alpha = 1f;
             cgGameLose.blocksRaycasts = true;
             cgGameLose.interactable = true;

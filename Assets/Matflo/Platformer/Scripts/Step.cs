@@ -15,6 +15,7 @@ namespace Matflo.Platformer.Scripts
             if (collider.gameObject.CompareTag("Player"))
             {
                 GameManager.instance.CollectCoin();
+               // PlateformerNarrator.Instance.BringInNarrator(PlateformerNarrator.Instance.None, AudioName.ButtonClick, PlateformerNarrator.Instance.spriteOne);
                 Destroy(gameObject);
             }
         }
