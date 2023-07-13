@@ -14,6 +14,7 @@
         MatflowIntro2 = 7,
         MatflowIntro3 = 8,
 
+        // putaway
         OIScreen = 9,
         PickingLocation = 10,
         ScanTM = 11,
@@ -21,5 +22,14 @@
         PutawayLocation = 13,
         ScanLocation = 14,
         PutTM = 15,
+
+        //Receiving
+        OIScreenReceiving = 16,
+        SelectDeliveryReceiving = 17,
+        ScanSKUReceiving= 18,
+        ScanTMReceiving= 19,
+        EnterQuantityReceiving = 20,
+        PutTMReceiving= 21,
+        ClosingDeliveryReceiving = 22,
     }
 }

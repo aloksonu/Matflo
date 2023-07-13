@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Matflo/Scenes/Putaway.unity
     guid: 44c2f731ef1405643acc25c7919c4f57
+  - enabled: 1
+    path: Assets/Matflo/Scenes/Receiving.unity
+    guid: 718c4b393d011c7488cc81a0193b1940
   m_configObjects: {}

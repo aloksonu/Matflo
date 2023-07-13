@@ -7,6 +7,6 @@ namespace Matflo.Home.Scripts.Home
         Receiving = 0,
         Putaway = 1,
         StockAudit =2,
-        Plateformer = 1,
+        Plateformer = 3,
     }
 }
