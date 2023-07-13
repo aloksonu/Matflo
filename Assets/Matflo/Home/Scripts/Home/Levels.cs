@@ -4,7 +4,9 @@ namespace Matflo.Home.Scripts.Home
     {
 
         NotSet = -1,
-        Putaway = 0,
+        Receiving = 0,
+        Putaway = 1,
+        StockAudit =2,
         Plateformer = 1,
     }
 }
