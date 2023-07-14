@@ -18,10 +18,13 @@ namespace Matflo.Putaway.Scripts
         private static readonly int AnimPutaway = Animator.StringToHash("Putaway");
         private List<Vector3> listPos = new List<Vector3>();
         private int dragCounter;
+
+        internal int _wrongAttempt;
         void Start()
         {
             //GenericAudioManager.Instance.PlaySound(AudioName.CETinterface);
             dragCounter = 0;
+            _wrongAttempt = 0;
 
             for (int i = 0; i < dragObjects.Length; i++)
             {
@@ -45,6 +48,12 @@ namespace Matflo.Putaway.Scripts
                 g.GetComponent<DragAndDrop>().ResetIsDrop();
             }
             dragCounter = 0;
+           _wrongAttempt = 0;
+        }
+
+        internal void UpdateWrongAttempt()
+        {
+            _wrongAttempt++;
         }
 
         private void StartPutawayPrerequisites()

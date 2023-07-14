@@ -22,7 +22,7 @@ namespace Matflo.Common.Quiz
         }
 
         //private QuizType _quizType;
-        //private int _wrongAttempt;
+        private int _wrongAttempt;
         private bool _isOnceTimeAttempt;
         void Start()
         {
@@ -41,7 +41,7 @@ namespace Matflo.Common.Quiz
             quizPanelTextOnly.InstantiateQuizButtons(questionText, rightAnswer, wrongAnswer);
             _onRightOption = onRightSelection;
             _onWrongOption = onFailure;
-            
+            _wrongAttempt = 0;
             canvasGroup.UpdateState(true);
         }
 
@@ -72,7 +72,7 @@ namespace Matflo.Common.Quiz
             {
                 quizPanelTextOnly.transform.GetChild(i).GetComponent<Button>().interactable = false;
             }
-            ScoreManager.Instance.UpdateScore(10,10);
+            ScoreManager.Instance.UpdateScore(10,10, _wrongAttempt);
             Invoke(nameof(ActionDelay), 1f);
         }
 
@@ -90,7 +90,8 @@ namespace Matflo.Common.Quiz
             {
                 quizPanelTextOnly.transform.GetChild(i).GetComponent<Button>().interactable = false;
             }
-            ScoreManager.Instance.UpdateScore(0, 10);
+            _wrongAttempt++;
+            //ScoreManager.Instance.UpdateScore(0, 10);
             Invoke(nameof(ActionDelayForWrong), 1f);
         }
 

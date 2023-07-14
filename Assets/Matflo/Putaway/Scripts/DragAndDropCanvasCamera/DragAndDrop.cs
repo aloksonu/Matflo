@@ -59,6 +59,7 @@ namespace Matflo.Putaway.Scripts.DragAndDropCanvasCamera
         public void UpdateHealth()
         {
             HealthManager.Instance.UpdateHealth(1);
+            PutawayGameManager.Instance.UpdateWrongAttempt();
             if (HealthManager.Instance.GetHealth() <= 0)
             {
                 LevelFail.Instance.BringIn();
@@ -68,6 +69,7 @@ namespace Matflo.Putaway.Scripts.DragAndDropCanvasCamera
         {
             isDrop = true;
             UpdateScore();
+            //PutawayGameManager.Instance._wrongAttempt = 0;
             if (LevelPanel.Instance.levelName == LevelName.Receiving)
             {
                 if (id == 1)
@@ -106,7 +108,8 @@ namespace Matflo.Putaway.Scripts.DragAndDropCanvasCamera
 
         public void UpdateScore()
         {
-            ScoreManager.Instance.UpdateScore(10, 10);
+            ScoreManager.Instance.UpdateScore(10, 10, PutawayGameManager.Instance._wrongAttempt);
+            PutawayGameManager.Instance._wrongAttempt = 0;
         }
 
         public void ResetIsDrop()

@@ -25,11 +25,26 @@ namespace Matflo.Common.Score
             maxScoreTextMeshProUGUI.text = _maxScore.ToString();
         }
 
-        internal void UpdateScore(int score ,int maxScore)
+        internal void UpdateScore(int score ,int maxScore , int wrongAttempt)
         {
         
             _maxScore = _maxScore + maxScore;
-            _score =  _score + score;
+            if (wrongAttempt == 0)
+            {
+                _score = _score + score;
+            }
+            else if (wrongAttempt == 1)
+            {
+                _score = _score + score-2;
+            }
+            else if (wrongAttempt == 2)
+            {
+                _score = _score + score - 4;
+            }
+            else
+            {
+                _score = _score + 0;
+            }
             scoreTextMeshProUGUI.text = _score.ToString();
             maxScoreTextMeshProUGUI.text = _maxScore.ToString();
 
