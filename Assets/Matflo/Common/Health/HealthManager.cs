@@ -13,7 +13,7 @@ namespace Matflo.Common.Health
         private int leftHealth;
         void Start()
         {
-            maxHealth = 20;
+            maxHealth = 200;
             ResetHealth();
         }
         internal void BringIn()
