@@ -20,6 +20,7 @@ namespace Matflo.Putaway.Scripts.DragAndDropCanvasCamera
                     GenericAudioManager.Instance.PlaySound(AudioName.Correct);
                     eventData.pointerDrag.GetComponent<DragAndDrop>().UpdateIsDrop();
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
+                    eventData.pointerDrag.GetComponent<DragAndDrop>().enabled = false;
                     //Debug.Log("Correct");
                 }
                 else

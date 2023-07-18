@@ -44,6 +44,7 @@ namespace Matflo.Putaway.Scripts
         {
             foreach (GameObject g in dragObjects)
             {
+                g.GetComponent<DragAndDrop>().enabled = true;
                 g.GetComponent<DragAndDrop>().ResetPosition();
                 g.GetComponent<DragAndDrop>().ResetIsDrop();
             }
