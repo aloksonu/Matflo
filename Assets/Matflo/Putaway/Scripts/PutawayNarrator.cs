@@ -39,11 +39,11 @@ namespace Matflo.Putaway.Scripts
         {
             NOIScreen = "Accessing the user interface for putaway operations.";
             NPickingLocation = "Moving to the designated area for picking items.";
-            NScanTM = "Using a scanning device to read the unique identifier of a transport medium (TM) present in the location.";
-            NScanSKU = "Scanning the barcode or identifier of a specific item (SKU) stored within the transport medium.";
+            NScanTM = "Using a scanning device to read the unique identifier of a transport module(TM) present in the location.";//Transport Module
+            NScanSKU = "Scanning the barcode or identifier of a specific item (SKU) stored within the transport module.";//Transport Module
             NPutawayLocation = "Showing the appropriate storage location for putaway on the screen.";
             NScanLocation = "Scanning the barcode or identifier of the designated putaway location";
-            NPutTM = "Placing the transport medium onto the assigned putaway location.";
+            NPutTM = "Placing the transport module onto the assigned putaway location.";//Transport Module
 
             _canvasGroup.UpdateState(false, 0);
             btnClose.onClick.AddListener(BringOutNarrator);
