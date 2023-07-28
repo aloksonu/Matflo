@@ -144,7 +144,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 16
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: 982700cd4b59f184d8782c8b9b9933b9, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
@@ -154,7 +154,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 17
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: e6874897915e65e488e09f2550a73127, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 18
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: 1c2d8736e2e608c4e8b50949a506ed59, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 19
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: e64f37b86b878ac4e86215d12d8df37f, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
@@ -184,7 +184,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 20
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: b40ef3e54e4b02a43a52a4c45bc4b54b, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
@@ -194,7 +194,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 21
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: a220cea5587763444bd51bc22293fbb4, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
@@ -204,7 +204,7 @@ MonoBehaviour:
     playOnAwake: 0
     rapidSingleShotSound: 0
   - audioName: 22
-    clip: {fileID: 8300000, guid: a3255856d2e197e4dbacf641d53900ec, type: 3}
+    clip: {fileID: 8300000, guid: b4ab6937c15f8004d861c44c1eb29fc6, type: 3}
     soundType: 0
     audioSources:
     - {fileID: 0}
