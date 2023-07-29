@@ -11,20 +11,20 @@ public class DateComparison : MonoBehaviour
     void Start()
     {
         currentDate = DateTime.Now;
-        targetDate = new DateTime(2023, 7, 28);
+        targetDate = new DateTime(2023, 8, 22);
         dateCompare();
     }
 
 
     public void dateCompare()
     {
-        int comparisonResult = DateTime.Compare(currentDate, targetDate);
-        if (comparisonResult > 0)
+        int comparisonResult = DateTime.Compare(targetDate, currentDate);
+        if (comparisonResult < 0)
         {
-            Debug.Log("Current date is after the target date.");
+            //Debug.Log("Current date is before the target date.");
             canvas.SetActive(false);
         }
-        else if (comparisonResult < 0)
+        else if (comparisonResult > 0)
         {
            // Debug.Log("Current date is before the target date.");
         }
