@@ -11,7 +11,7 @@ public class DateComparison : MonoBehaviour
     void Start()
     {
         currentDate = DateTime.Now;
-        targetDate = new DateTime(2023, 8, 22);
+        targetDate = new DateTime(2023, 9, 22);
         dateCompare();
     }
 
